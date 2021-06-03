@@ -1,0 +1,1410 @@
+﻿@model IEnumerable<gbuweb.Models.Faculty>
+    <html lang="en">
+    <head>
+        <title>GBU | Information & Commnication Technology</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <link rel="icon" type="image/gif/png" href="~/Content/img/logo_gbu.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" type="text/css" href="~/Content/schools/css/style.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato|Poppins:400,500|Source+Sans+Pro&display=swap" rel="stylesheet">
+        <script async src="https://cse.google.com/cse.js?cx=014142162027795520387:rpatngdrvw9"></script>
+    
+        <style type="text/css">
+    
+            /* ============ desktop view ============ */
+            @@media all and (min-width: 992px) {
+    
+                .dropdown-menu li {
+                    position: relative;
+                }
+    
+                .dropdown-menu .submenu {
+                    display: none;
+                    position: absolute;
+                    left: 100%;
+                    top: -7px;
+                }
+    
+                .dropdown-menu .submenu-left {
+                    right: 100%;
+                    left: auto;
+                }
+    
+                .dropdown-menu > li:hover {
+                    background-color: #f1f1f1
+                }
+    
+                    .dropdown-menu > li:hover > .submenu {
+                        background-color: #f1f1f1;
+                        display: block;
+                    }
+            }
+            /* ============ desktop view .end// ============ */
+    
+            /* ============ small devices ============ */
+            @@media (max-width: 991px) {
+    
+                .dropdown-menu .dropdown-menu {
+                    margin-left: 0.7rem;
+                    margin-right: 0.7rem;
+                    margin-bottom: .5rem;
+                }
+            }
+            /* ============ small devices .end// ============ */
+    
+        </style>
+    
+    
+        <script type="text/javascript">
+            window.addEventListener("resize", function () {
+                "use strict"; window.location.reload();
+            });
+    
+            document.addEventListener("DOMContentLoaded", function () {
+    
+                // make it as accordion for smaller screens
+                if (window.innerWidth < 992) {
+    
+                    // close all inner dropdowns when parent is closed
+                    document.querySelectorAll('.navbar .dropdown').forEach(function (everydropdown) {
+                        everydropdown.addEventListener('hidden.bs.dropdown', function () {
+                            // after dropdown is hidden, then find all submenus
+                            this.querySelectorAll('.submenu').forEach(function (everysubmenu) {
+                                // hide every submenu as well
+                                everysubmenu.style.display = 'none';
+                            });
+                        })
+                    });
+    
+                    document.querySelectorAll('.dropdown-menu a').forEach(function (element) {
+                        element.addEventListener('click', function (e) {
+    
+                            let nextEl = this.nextElementSibling;
+                            if (nextEl && nextEl.classList.contains('submenu')) {
+                                // prevent opening link if link needs to open dropdown
+                                e.preventDefault();
+    
+                                if (nextEl.style.display == 'block') {
+                                    nextEl.style.display = 'none';
+                                } else {
+                                    nextEl.style.display = 'block';
+                                }
+    
+                            }
+                        });
+                    })
+                }
+                // end if innerWidth
+    
+            });
+            // DOMContentLoaded  end
+        </script>
+    
+    
+        <script type="text/javascript">
+            function executeQuery() {
+                var input = document.getElementById('form-search-input');
+                console.log(input)
+                var element = google.search.cse.element.getElement('searchresults-only0');
+                if (input.value == '') {
+                    element.clearAllResults();
+                } else {
+                    element.execute(input.value);
+                }
+                return false;
+            }
+        </script>
+    </head>
+    <body>
+        <div class="header sticky-top">
+            <div class="global-header">
+                <div class="back-to-home justify-content-center">
+                    <nav class="navbar shadow py-1" id="top-navigation">
+                        <div class="container-fluid">
+                            <a class="navbar-brand float-left" href="/">
+                                <img src="~/Content/img/logo_gbu.png" id="gbu-logo">
+                                <h5 class="px-2 me-auto" id="gbu-name">Gautam Buddha University</h5>
+                            </a>
+                            <form class="form-inline my-1 my-lg-0 d-none d-lg-block" onsubmit="return executeQuery();">
+                                <div class="container">
+                                   <input class="form-control form-control-sm" type="search" placeholder="Search" aria-label="Search" id="form-search-input">
+                                    <button class="btn btn-sm btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </nav>
+                </div>
+              
+		  <!-- ============= COMPONENT ============== -->
+                <nav class="navbar shadow navbar-expand-lg navbar-bgcolor">
+                    <div class="container px-3 my-3">
+                        <a class="navbar-brand me-auto" href="/schools/soict">
+                            <div class="row">
+                                <div class="col mr-2" id="col-college-name-1">
+                                    <div class="row justify-content-end">
+                                        <h5 class="me-auto" id="college-name-1">University</h5>
+                                    </div>
+                                    <div class="row justify-content-end">
+                                        <h5 class="me-auto " id="college-name-1">School of</h5>
+                                    </div>
+                                </div>
+                                <div class="col me-auto">
+                                    <!-- <h5 class="me-auto float-right" id="college-name-2">ICT</h5> -->
+                                    <div class="row justify-content-start">
+                                        <h3 class="me-auto" id="college-name-2">Information &</h3>
+                                    </div>
+                                    <div class="row justify-content-start">
+                                        <h3 class="me-auto" id="college-name-2">Communication Technology</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+              <button class="navbar-toggler collapsed me-auto" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-expanded="false">
+                            <span><i class="fa fa-bars"></i></span>
+                        </button>
+                        <div class="navbar-collapse collapse" id="collapsibleNavbar">
+                            <ul class="nav ml-auto text-center justify-content-center" id="nav-tabs" role="tablist">
+                            @*<ul class="navbar-nav nav ml-auto text-center justify-content-center" id="nav-tabs" role="tablist">*@
+
+<li class="nav-item active"><a href="#home-tab" class="nav-link" data-toggle="tab" role="tab">Home</a></li>
+                                    
+			<li class="nav-item dropdown">
+
+<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">About Us</a>
+                                        
+			<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+			
+	<li><a class="dropdown-item" href="Dean'sMessage.html" data-toggle="pill">Dean's Message</a></li>
+                                           
+    
+	<li class="dropdown-item dropdown dropright"> <a class="nav-item dropdown-toggle" data-toggle="tab">USICT Department</a>
+
+
+    
+		<ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#department-cse-tab" data-toggle="tab">Computer Science and Engineering</a></li>
+                      <li><a class="dropdown-item" href="#department-ece-tab" data-toggle="tab">Electronics and Communication Engineering</a></li>
+                    </ul>
+                  </li>
+
+
+
+                  	<li class="dropdown-item dropdown dropright">
+			<a class="nav-item dropdown-toggle" data-toggle="tab">USICT Programmes</a>
+                   
+		<ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#programs-tab-cse" data-toggle="tab">Computer Science and Engineering</a></li>
+                      <li><a class="dropdown-item" href="#programs-tab-ece" data-toggle="tab">Electronics and Communication Engineering</a></li>
+                    </ul>
+                  </li>
+                                            
+
+		   	<li class="dropdown-item dropdown dropright"><a class="nav-item dropdown-toggle" data-toggle="tab">USICT PEOs and POs</a>
+                
+		<ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#plo-tab-cse" data-toggle="tab">Computer Science and Engineering</a></li>
+                      <li><a class="dropdown-item" href="#plo-tab-ece" data-toggle="tab">Electronics and Communication Engineering</a></li>
+                    </ul>
+                  </li>
+
+
+	<li><a class="dropdown-item" href="#boardofstudies-tab" data-toggle="pill">USICT Board of Studies</a></li>
+
+
+	<li><a class="dropdown-item" href="#school-swelfare" data-toggle="tab"> USICT Student Welfare</a></li>
+    
+                                            
+	<li><a class="dropdown-item" href="#staffmembers-tab" data-toggle="pill">USICT Staff Members</a></li>
+
+                                            
+	<li><a class="dropdown-item" href="#laboratories-tab" data-toggle="tab">USICT Laboratories</a></li>
+
+                                            
+	<li><a class="dropdown-item" href="#school-activities" data-toggle="tab">USICT Activities</a></li>
+    
+    
+    
+	<li><a class="dropdown-item" href="#directory-tab" data-toggle="tab">USICT Directory</a></li>
+        </ul>
+        </li>
+    
+    
+    
+<li class="nav-item active"><a href="#faculty-tab" class="nav-link" data-toggle="tab" role="tab">Faculty</a></li>
+    
+    
+                                    <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Research</a>
+                                        <div class="dropdown-menu" id="dropdown-h">
+                                            	<a class="dropdown-item" href="#profile-area" data-toggle="tab">Research Area and Profile</a>
+                                            	<a class="dropdown-item" href="#fellow-grant" data-toggle="tab">Fellowship and Grants</a>
+                                            	<a class="dropdown-item" href="#scholor" data-toggle="tab">Research Scholars</a>
+                                            	<a class="dropdown-item" href="#project-grant" data-toggle="tab">Research Projects</a>
+    					    	<a class="dropdown-item" href="#research-publication-tab" data-toggle="tab">Publications</a>
+                                            	<a class="dropdown-item" href="#patents" data-toggle="tab">Patents</a>
+                                        </div>
+                                    </li>
+    
+    
+    
+                                    <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Training & Placements</a>
+                                        <div class="dropdown-menu" id="dropdown-h">
+                                        	<a class="dropdown-item" href="#training" data-toggle="tab">Training and Consultancy</a>
+						<a class="dropdown-item" href="#training-internship" data-toggle="tab">Training and Internship</a>
+                                        	<a class="dropdown-item" href="#placements-overview-tab" data-toggle="tab">Placements Overview</a>
+                                        	<a class="dropdown-item" href="#student-placements-tab" data-toggle="tab">Student Placements</a>
+                                        	<a class="dropdown-item" href="#prules-placements-tab" data-toggle="tab">Placement Rules</a>
+                                        </div>
+                                    </li>
+ 
+  
+    
+                                    <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Contact Us</a>
+                                        <div class="dropdown-menu" id="dropdown-h">
+                                            	<a class="dropdown-item" href="#exam-tab" data-toggle="tab">USICT Examinations</a>
+                                            	<a class="dropdown-item" href="#placements-tab" data-toggle="tab">USICT Placements</a>
+                                            	<a class="dropdown-item" href="#admission-tab" data-toggle="tab">USICT Admissions</a>
+                                            	<a class="dropdown-item" href="#research-tab" data-toggle="tab">USICT Research</a>
+                                            	<a class="dropdown-item" href="#contactus-tab" data-toggle="tab">USICT Offices</a>
+                                        </div>
+                                    </li>
+ 
+                                </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+       
+
+
+
+            
+
+
+
+
+            
+
+
+            
+
+
+           
+
+
+
+
+
+
+            
+           
+
+            
+
+            
+            
+            <!-- research scholor start -->
+    
+            <div class="tab-pane fade" id="scholor" role="tabpanel">
+                <div class="container my-4">
+                    <div class="jumbotron py-3">
+                        <h5 class="text-lg-left mt-3 mb-0">RESEARCH SCHOLARS | USICT</h5>
+                        <div class=" my-2 float-left" style="height: 5px; width: 7%; background-color:#FB8C00 ">
+                        </div>
+                        <br>
+    
+                        <ul>
+    
+    
+    
+                            <h6 class="px-0 py-0 font-weight-bold text-primary" colspan="4">2019</h6>
+    
+    
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Aditi Sakalle<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Pursuing<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Design & Evaluation of A New Artificial Intelligence-Based Emotion Recognition 					Model using EEG Signals<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Pradeep Tomar
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Ashwini Kumar Verma<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Pursuing<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Feature-Based Malware Classification and Detection using Machine Learning 						Techniques for Air-Gapped Network<br>
+                                <b>Supervisor’s Name</b>:&emsp;Prof. Sanjay Kumar Sharma
+                            </p>
+    
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Harshit Bhardwaj<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Pursuing<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Analysis and Evaluation of Computational Intelligence-Based Personality Prediction 				Classifier Using EEG Signals<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Pradeep Tomar
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;J Amutha<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Pursuing<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Computational Intelligence based Energy Efficient Clustering Algorithm for 						Wireless Sensor Networks<br>
+                                <b>Supervisor’s Name</b>:&emsp;Prof. Sanjay Kumar Sharma
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Manali Gupta<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Pursuing<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Brain Tumor Prediction using Machine Learning Algorithms<br>
+                                <b>Supervisor’s Name</b>:&emsp;Prof. Sanjay Kumar Sharma
+                            </p>
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Tarana Singh<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Pursuing<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;A Novel Smart Energy Management System using IoTs and Machine Learning for Smart 					City Power Management<br>
+                                <b>Supervisor’s Name</b>:&emsp;Prof. Sanjay Kumar Sharma and Dr. Arun Solanki
+                            </p>
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Uttam Sharma<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Pursuing<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Design and Evaluation of Biometric-Based Secure and Efficient Authentication Model 				using Deep Learning<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Pradeep Tomar
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Vaishnavi<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Pursuing<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Breast Cancer Detection using Machine Learning<br>
+                                <b>Supervisor’s Name</b>:&emsp;Prof. Sanjay Kumar Sharma
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Zaineb Naaz<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Pursuing<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Data Aggregation and Processing Techniques for Energy Efficient Internet of 						Things<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Vidushi Sharma
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Roshi Saxena<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Pursuing<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Diabetes Mellitus Prediction using Machine learning Algorithm<br>
+                                <b>Supervisor’s Name</b>:&emsp;Prof. Sanjay Kumar Sharma
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Uttam Sharma<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Pursuing<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Communication Process Models for IoT System and Devices<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Vidushi Sharma
+                            </p>
+    
+    
+    
+                            <br>
+    
+                            <h6 class="px-0 py-0 font-weight-bold text-primary" colspan="4">2018</h6>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Gamini Joshi<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Pursuing<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Design of Trust Based Model for Internet of Things<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Vidushi Sharma
+                            </p>
+    
+    
+                            <br>
+                            <h6 class="px-0 py-0 font-weight-bold text-primary" colspan="4">2017</h6>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Dimpal Tomar<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Pursuing<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Development of Sustainable Machine Learning Model to Improve the Performance of 					IoT-Based Smart Home Environment <br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Pradeep Tomar
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Manoj Sharma<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Pursuing<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Design and Development of Printed Antennas For Future Wireless Applications <br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Neeta Singh
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Neeti Gupta<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Pursuing<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Spectrum Efficient Techniques in IoT<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Vidushi Sharma
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Niraj Agrawal<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Pursuing<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Design of Multiband / Multiple Polarized Planar Antennas for Automotive 						Application<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Rajesh Mishra
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Umesh Chandra Singh<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Pursuing<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Design and Analysis of Substrate Integrated Waveguide Components<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Rajesh Mishra
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Vartika Sharma<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Pursuing<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Some Aspects of Reliability Evaluation of Complex Communication Networks<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Rajesh Mishra
+                            </p>
+    
+    
+    
+    
+    
+    
+                            <br>
+    
+                            <h6 class="px-0 py-0 font-weight-bold text-primary" colspan="4">2014</h6>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Arjun Kumar Sirohi<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Transactional Business Intelligence Queries: Exploring New Techniques for 						Performance and Scalability<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Vidushi Sharma
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Sadiq Mohammed Mahiub Galib<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Fuzzy Based Video-on-Demand System in Mobile Adhoc Networks<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Rajesh Mishra and Dr. Anurag Singh Baghel
+                            </p>
+    
+    
+                            <br>
+    
+                            <h6 class="px-0 py-0 font-weight-bold text-primary" colspan="4">2013</h6>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Aarti Gautam Dinkar<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Improved Key Management Security Scheme for Wireless Sensor Network<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Vidushi Sharma
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Aleem Ali<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Delay Aware QoS in MANET using Queueing Theoretic Approach<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Neeta Singh
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Amit Mishra<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Design and Evaluation of a Model for Multistage Legacy Crisis Detection in IT-					Solutions of Enterprises<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Anurag Singh Baghel
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Ankur Choudhary<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Nature Inspired Approach to Software Reliability Prediction<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Anurag Singh Baghel
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Anuradha<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Dynamic Power Management in Wireless Sensor Networks<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Vidushi Sharma
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Bhupendra Singh<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Communication Based Train Control System<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Rajesh Mishra
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Chander Diwaker<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Reliability Prediction for Component-Based Software by using Soft Computing 						Techniques<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Pradeep Tomar
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Deepak Panwar<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Software Quality Prediction for Component-Based Software using Computational 					Intelligence<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Pradeep Tomar
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Gourav Verma<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Efficient Energy Harvesting Design for Environmental Monitoring in WSN<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Vidushi Sharma
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Kavita Sheoran<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Energy Efficient Harvesting for Environmental Monitoring in WSN<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Pradeep Tomar and Dr. Rajesh Mishra
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Mohd. Altamesh Sheikh<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Pursuing<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Quality of Service and Mobility Extension of Network Mobility (NEMO) Protocol for 					On-Board Application using Leo Satellite Constellation<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Neeta Singh
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Mukesh Kumar Garg<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Pursuing<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Application of Soft Computing Techniques for Design & Analysis of Trust Based 					Routing Protocol for Mobile Ad Hoc Networks (MANETs)<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Neeta Singh
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Mukesh Mann<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Design and Evaluation of Software Testing Technique using Computational 						Intelligence<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Pradeep Tomar
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Parveen Kumar<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Dynamic Metrics Measurement of Component-Based Software Engineering<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Pradeep Tomar
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Priyanka Goel<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Development of Optical Interconnects for Low Power High Speed Transceiver<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Gurjit Kaur
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Pooja Malik<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Development of a Suitable Assessment Methodology for English to Hindi Machine 					Translation<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Anurag Singh Baghel
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Poonam Jatwani<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Development of Conceptualization-Based Indexing Scheme for Semantic Web Search 					Engine<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Pradeep Tomar
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Poonam Verma<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;An Efficient Congestion Control Algorithm for Cam Broadcast Over Control Channel 					in Vehicular Adhoc Networks (VANETS)<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Neeta Singh
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Rajendra Bahadur Singh<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Meta-Heuristics Optimization for IC Floorplanning<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Anurag Singh Baghel
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Rajnesh Singh<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Pursuing<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Performance Evaluation of Improved TCP Protocol in Mobile Ad-Hoc Networks<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Neeta Singh
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Shilpi Gadi<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Pursuing<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Mitigating Effects of Fading Channels in Wireless Communication Systems<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Anurag Singh Baghel
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Sonu Lal Gupta<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Sentiment Classification using Swarm Intelligence in Big Data<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Anurag Singh Baghel
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Supriya Goel<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Analysis and Evaluation of ECG Signal for Emotion Recognition using Computational 					Intelligence<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Gurjit Kaur and Dr. Pradeep Tomar
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Vimlesh Kumar<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Development of Optimal Routing Algorithms in Ad-hoc Networks<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Anurag Singh Baghel
+                            </p>
+    
+    
+    
+    
+                            <br>
+                            <h6 class="px-0 py-0 font-weight-bold text-primary" colspan="4">2011</h6>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Aditya Pratap Singh<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Design and Evaluation of New Reusability Metrics Based on Fuzzy Approach to 						Measure the Quality of Component-Based Software<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Pradeep Tomar
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Amritakar Mandal<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Study of Adaptive Equalizers Using FIR Filtering Techniques for Radar Signal 					Processing Applications<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Rajesh Mishra
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Bhawna Ahuja<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Development of Improved Spectrum Sensing Techniques for Cognitive Radio 						Networks<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Gurjit Kaur
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Gayatri Sakya<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;An Improved MAC Protocol for Mission Critical Applications in Wireless Sensor 					Networks<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Vidushi Sharma
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Jagdeep Kaur<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp; Design and Evaluation of Software Component Selection Algorithm according to 					Requirements by using Fuzzy Clustering Techniques<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Pradeep Tomar
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Manu<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Maintainability Analysis and Detection Algorithm for High Level Cloning<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Vidushi Sharma
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Neha Chaudhary<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Design and Assessment of Software Testing Technique for Event Driven Software<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. O. P. Sangwan
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Pradeep Kumar<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Development and Evaluation of Software Metrics for Aspect-Oriented Software 						Development<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. O. P. Sangwan
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Rajesh Yadav<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Design and Implementation of 3D Codes for Optical CDMA Systems<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Gurjit Kaur
+                            </p>
+    
+    
+    
+                            <br>
+    
+                            <h6 class="px-0 py-0 font-weight-bold text-primary" colspan="4">2010</h6>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Jyoti<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Development of Optimized Website Ranking Algorithm for Semantics Web<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Ela Kumar
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Meena Rao<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;An Efficient Routing Protocol for QoS Provisioning in Dynamic Multihop MANETS<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Neeta Singh
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Manisha Manjul<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;QoS Based Secure Communication <br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Rajesh Mishra
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Navaid Zafar Rizvi<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Modeling and Performance Evaluation of RF MEMS Switch<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Rajesh Mishra
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Nirpendra Narayan Das<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Development of Hybrid Query processing Algorithm to Extract Web Pages from Deep 					Web <br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Ela Kumar
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Puneet Azad<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Energy Efficient Clustering Algorithms for Wireless Sensor Networks<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr.Vidushi Sharma
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Sandeep Sharma<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Cross Layer Concept based Security Algorithm for Wireless Networks<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Rajesh Mishra
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Vinay Kumar Singh<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Energy Efficient Routing for Wireless Sensor Networks<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Vidushi Sharma
+                            </p>
+    
+    
+                            <br>
+    
+                            <h6 class="px-0 py-0 font-weight-bold text-primary" colspan="4">2009</h6>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Arun Solanki<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Design and Development of Domain Specific Knowledge-Based Expert System<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Ela Kumar
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Mohd. Ashraf Saifi<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Reliability Evaluation and Topological Design of Communication Network<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Rajesh Mishra
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Sandeep Singh Rana<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Performance Evaluation of Intelligent Algorithms for Data Mining<br>
+                                <b>Supervisor’s Name</b>:&emsp;Prof. Sanjay Kumar Jasola and Dr. Ela Kumar
+                            </p>
+    
+                            <hr>
+                            <p>
+                                <b>Research Scholar</b>:&emsp;&ensp;&nbsp;Sandhya Tarar<br>
+                                Status:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Awarded<br>
+                                Thesis Title:&emsp;&emsp;&emsp;&emsp;Analysis and Design of Algorithms to Improve the Performance of Fingerprint 						Identification System<br>
+                                <b>Supervisor’s Name</b>:&emsp;Dr. Ela Kumar
+                            </p>
+    
+    
+    
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- research scholor end -->
+            <!-- research publication start -->
+            
+
+            <div class="tab-pane fade" id="research-publication-tab" role="tabpanel">
+                <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #78335d;">
+                    <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        &#9776;
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="text-center mx-auto">
+    
+                            <ul class="navbar-nav  text-white container" id="pills" role="tablist">
+    
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link text-white active"
+                                       id="pills-tab-1"
+                                       data-toggle="pill"
+                                       href="#J-pub"
+                                       role="tab"
+                                       aria-controls="j-pub"
+                                       aria-selected="true">Journal Publications</a>
+                                </li>
+    
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link text-white"
+                                       id="pills-tab-2"
+                                       data-toggle="pill"
+                                       href="#c-pub"
+                                       role="tab"
+                                       aria-controls="c-pub"
+                                       aria-selected="false">Conference Publications</a>
+                                </li>
+    
+                                
+        
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link text-white" id="pills-tab-4" data-toggle="pill" href="#b-pub" role="tab" aria- controls="b-pub" aria-selected="false">Book Publications</a>
+                                </li>
+
+<li class="nav-item" role="presentation">
+                                    <a class="nav-link text-white" id="pills-tab-3" data-toggle="pill" href="#b-chapter" role="tab" aria- controls="b-chapter" aria-selected="false">Book Chapters</a>
+                                </li>
+
+    
+                                    
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+    
+                <div class="tab-content" "pills-tab-content">
+                    <div class="tab-pane fade show active" id="j-pub" role="tabpanel" aria-labelledby="pills-tab-1">
+                        <div class="container">
+                            <h5 class=" text-lg-left mt-3 mb-0">JOURNAL PUBLICATIONS | USICT</h5>
+                            <div class=" mb-3 mt-2 float-left" style="height: 5px; width: 7%; background-color:#FB8C00 "></div>
+                            <br>
+                            <br>
+    
+    			<ul>
+                          <h6 class="font-weight-bold"> USICT will update soon Journal Publication list on website.</h6>
+        
+                        </ul>
+                            
+    
+    
+                            <ul type="circle">
+                                <li>
+   
+    
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+    
+    
+    
+    
+                    <div class="tab-pane fade" id="c-pub" role="tabpanel" aria-labelledby="pills-tab-2">
+                        <div class="container">
+                            <h5 class=" text-lg-left mt-3 mb-0">CONFERENCE PUBLICATIONS | USICT</h5>
+                            <div class=" mb-3 mt-2 float-left" style="height: 5px; width: 7%; background-color:#FB8C00 "></div>
+                            <br>
+                            <br>
+                            <ul>
+                          <h6 class="font-weight-bold"> USICT will update soon Conference Publication list on website.</h6>
+        
+                        </ul>
+                            
+    
+    
+                            <ul type="circle">
+                                <li>
+   
+    
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+    
+                    <div class="tab-pane fade" id="b-pub" role="tabpanel" aria-labelledby="pills-tab-3">
+                        <div class="container">
+                            <h5 class=" text-lg-left mt-3 mb-0">BOOK PUBLICATIONS | USICT</h5>
+                            <div class=" mb-3 mt-2 float-left" style="height: 5px; width: 7%; background-color:#FB8C00 "></div>
+                            <br>
+                            <br>
+                            <ul>
+                          <h6 class="font-weight-bold"> USICT will update soon Book Publication list on website.</h6>
+        
+                        </ul>
+                            
+    
+    
+                            <ul type="circle">
+                                <li>
+   
+    
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+    
+    
+                    <div class="tab-pane fade" id="b-chapter" role="tabpanel" aria-labelledby="pills-tab-4">
+                        <div class="container">
+                            <h5 class=" text-lg-left mt-3 mb-0">BOOK CHAPTERS | USICT</h5>
+                            <div class=" mb-3 mt-2 float-left" style="height: 5px; width: 7%; background-color:#FB8C00 "></div>
+                            <br>
+                            <br>
+                            <ul>
+                          <h6 class="font-weight-bold"> USICT will update soon Book Chapters list on website.</h6>
+        
+                        </ul>
+                            
+    
+    
+                            <ul type="circle">
+                                <li>
+   
+    
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+    
+    
+                          
+                </div>
+            </div>
+    
+            
+
+
+
+
+
+            <!-- research publication end -->
+            <!-- Research Projects and Grants start -->
+            <div class="tab-pane fade" id="project-grant" role="tabpanel">
+                <div class="container my-4">
+                    <div class="jumbotron py-3">
+                        <h5 class="text-lg-left mt-1 mb-0">RESAERCH PROJECTS AND GRANTS | USICT</h5>
+                        <div class=" my-2 float-left" style="height: 5px; width: 7%; background-color:#FB8C00 ">
+                        </div>
+                        <br>
+    
+                        <ul>
+                            <li>
+                                <h6 class="font-weight-bold"> ONGOING PROJECT </h6>
+    
+    
+                                <p class="text-justify">
+                                    <b>Team Members</b>: Nain, V. (Principal Investigator) and <b>Tomar, P.</b> (Co- PI)
+                                    Research Project Title: High throughput design, synthesis and validation of TALENs for targeted Genome Engineering, Department of Biotechnology, Ministry of Science and Technology Government of India New Delhi, India.
+                                </p>
+    
+                                <p class="text-justify">
+                                    <b>Name of Funding Agency</b>: Department of Biotechnology, Ministry of Science and Technology Government of India New Delhi, India.	Grant Received: Rs 8628100/-
+                                </p>
+    
+                                <p class="text-justify">
+                                    <b>Research Project Description</b>:
+                                    With the availability of meganuclease (ZFN, TALEN & CRISPR), tailored changes can be introduced into a eukaryotic genome at any desired gene. However, IPRs held by foreign organizations, high cost of synthesis and off target activity remain major constraints in adoption of this technology for commercial purpose. The proposed research project aims to develop material (synthetic gene sequences) and methods for robust high throughput custom designed TALEN synthesis. Further, methods will be developed for analysis of genome wide activity and specificity of newly developed TALENs, using next generation sequencing.
+                                </p>
+    
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Research Projects and Grants end -->
+            <!-- Research and Grants start -->
+            <div class="tab-pane fade" id="fellow-grant" role="tabpanel">
+                <div class="container my-4">
+                    <div class="jumbotron py-3">
+                        <h5 class="text-lg-left mt-1 mb-0">FELLOWSHIP AND GRANT | USICT</h5>
+                        <div class=" my-2 float-left" style="height: 5px; width: 7%; background-color:#FB8C00 ">
+                        </div>
+                        <br>
+    
+                        <ul>
+    
+                            <h6 class="font-weight-bold"> USICT will update soon on website about research fellowship and grants </h6>
+    
+    
+    
+    
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- TResearch and Grants end -->
+            <!-- patents start -->
+            <div class="tab-pane fade" id="patents" role="tabpanel">
+    
+                <div class="container my-4">
+                    <div class="jumbotron py-3">
+                        <h5 class="text-lg-left mt-3 mb-0">PATENTS | USICT</h5>
+                        <div class="my-2 float-left" style="height: 5px; width: 7%; background-color:#FB8C00 ">
+                        </div>
+                        <br>
+    
+                        <ul>
+                            <li>
+    
+                                <h7 class="font-weight-bold">PATENT FILED</h7>
+    
+                                <ul>
+<li><p class="text-justify">Acharya, D.; Bhardwaj, H.; Sakalle, A.; Goel, S.; Biswas, K. K.; <b>Tomar, P.</b> and Bhardwaj, A. (2021) Automated Personality Prediction, Patent Journal Office, INDIA. (202111001636 A)</p></li>
+                                  
+    
+<li><p class="text-justify">Nayyar, A.; Rameshwer, R.; Shukla, P. K.; Krishnamurthi, R. and <b>Tomar, P.</b> (2020) Diode Bridge (336950-001).</p></li>
+                                    
+    
+<li><p class="text-justify">Nain, V; Suman and <b>Tomar, P.</b> (2020) Synthetic Gene Coding for Foki Nuclease Domain in Programmable Nucleases for Genome Editing(202011039103).</p></li>
+                                   
+    
+<li><p class="text-justify">Nain, V; Suman and <b>Tomar, P.</b> (2020) Synthetic Gene Coding for VP64 Transcription Activation Domain in Programmable Transcription Factors (202011039104).</p></li>
+                                  
+    
+<li><p class="text-justify">Nain, V; Suman and <b>Tomar, P.</b> (2020) Synthetic Gene Coding for NF-Κb P65 Activation Domain Transcription Activation Domain in Programmable Transcription Factors (202011039105).</p></li>
+                                   
+    
+<li><p class="text-justify">Nain, V; Suman and <b>Tomar, P.</b> (2020) Synthetic Gene Coding for Krab Transcription Repression Domain in Programmable 		Transcription Repressors (202011039106).</p></li>
+                                   
+    
+<li><p class="text-justify">Nain, V; Suman and <b>Tomar, P.</b> (2020) Synthetic Gene Coding for TET1 Catalytic Domain in Programmable Enzymes for Epigenome Editing (202011039107)</p></li>
+                                   
+                           </ul>
+    
+    
+                            	<li>
+                                <h7 class="font-weight-bold">PATENT PUBLISHED</h7>
+                                <ul>
+<li><p class="text-justify"><b>Sharma, S.</b> (2020) “Voice Synthesis Mechanism through Natural Language Processing for Voice Interactive Robots” Indian Patent.</p></li>
+                                   
+    
+<li><p class="text-justify"><b>Sharma, S.</b> (2020) “IoT based Plant Detection using Support Vector Machine Algorithm” Indian Patent.</p></li>
+                                   
+    
+<li><p class="text-justify"><b>Sharma, V.</b> and Verma, G. (2020) A Novel Intelligent Force Convection and Utilization of Phase Change Property of the Materials for Thermal Energy Harvesting, Patent App. 201,811,048,341.</p></li>
+                                    
+    
+<li><p class="text-justify"><b>Sharma, V.</b> and Verma, G. (2020) A Novel Dynamic Array of RF Energy Harvesters With Hybrid Storage for Wireless Sensor Network, Patent App. 201,811,048,340</p></li>
+                                    
+                                </ul>
+    
+                            	<li>
+                                <h7 class="font-weight-bold">PATENT GRANTED</h7>
+                                <ul>
+<li><p class="text-justify"><b>Sharma, S.</b> (2020) “A Technique for Traffic Prediction and Congestion Control in IOT Networks using Machine Learning” Australian Patent.</p></li>
+                                   
+    
+<li><p class="text-justify"><b>Sharma, V.</b> (2020) "Techniques and Architectures for Providing and Operating an Application-Aware Database Environment" via USPTO Application number 8956P286 (1883US1) United States Patent.</p></li>
+                                    
+    
+<li><p class="text-justify"><b>Solanki, A.</b> (2020) “Edge Preserving Image Smoothing Benchmark System with Deep Convolutional Neural Network” in Australian Patent”, Patent number: 2020102385. Edge Preserving Image Smoothing Benchmark System with Deep Convolutional Neural Network is invented in which image smoothing is performed by retaining the edge of an image with Deep Convolutional NeuralNetwork by the state of art filters.</p></li>
+                                </ul>
+    
+                            </li>
+    
+                    </div>
+                </div>
+            </div>
+<!-- patents end -->
+
+<!-- contact us start -->
+            <div class="tab-pane fade" id="contactus-tab" role="tabpanel">
+                <div class="container my-4">
+                    <div class="jumbotron py-3">
+                        <h5 class="text-lg-left mt-3 mb-0">CONTACT US | USICT</h5>
+                        <div class=" my-2 float-left" style="height: 5px; width: 7%; background-color:#FB8C00 "></div>
+                        <br><br>
+                        <h6 class="card-title ml-5 "> <b>USICT OFFICE</b></h6>
+                        <p class="card-text ml-5">
+                            University School of Information and Communication Technology,<br>
+                            Gautam Buddha University, Greater NOIDA, 201312,<br>
+                            Distt. Gautam Budh Nagar, Uttar Pradesh, INDIA <br>
+                            <i class="fa fa-phone"></i>&nbsp;<a href="tel:01202346070"> 0120-234 6070 </a><br>
+                            <i class="fa fa-envelope"></i>&nbsp; <a href="mailto:soict@gbu.ac.in"> soict@gbu.ac.in</a>
+                        </p>
+                        <br>
+                        <h6 class="card-title ml-5 "> <b>Prof. Sanjay Kumar Sharma | Dean</b></h6>
+                        <p class="card-text ml-5">
+                            University School of Information and Communication Technology,<br>
+                            Gautam Buddha University, Greater Noida, 201312,<br>
+                            Distt. Gautam Budh Nagar, Uttar Pradesh, INDIA <br>
+                            <i class="fa fa-phone"></i>&nbsp;<a href="tel:01202346067"> 0120-234 6067 </a><br>
+                            <i class="fa fa-envelope"></i>&nbsp; <a href="mailto:sanjay.sharma@gbu.ac.in"> sanjay.sharma@gbu.ac.in</a>
+                        </p>
+                        <br>
+                        <h6 class="card-title ml-5 "> <b>Dr. Pradeep Tomar | Head of Department</b></h6>
+                        <p class="card-text ml-5">
+                            Department of Computer Science and Engineering, <br>
+                            University School of Information and Communication Technology,<br>
+                            Gautam Buddha University, Greater Noida, 201312,<br>
+                            Distt. Gautam Budh Nagar, Uttar Pradesh, INDIA <br>
+                            <i class="fa fa-phone"></i>&nbsp;<a href="tel:01202346085"> 0120-234 6085 </a><br>
+                            <i class="fa fa-envelope"></i>&nbsp; <a href="mailto:pradeep.tomar@gbu.ac.in"> pradeep.tomar@gbu.ac.in</a>
+                        </p>
+                        <br>
+                        <h6 class="card-title ml-5 "> <b> | Head of Department</b></h6>
+                        <p class="card-text ml-5">
+                            Department of Electronics and Communication Engineering, <br>
+                            University School of Information and Communication Technology,<br>
+                            Gautam Buddha University, Greater Noida, 201312,<br>
+                            Distt. Gautam Budh Nagar, Uttar Pradesh, INDIA <br>
+                            <i class="fa fa-phone"></i>&nbsp;<a href="tel:01202346087"> 0120-234 6087 </a><br>
+                            <i class="fa fa-envelope"></i>&nbsp; <a href="mailto:
+                            ">
+                        </p>
+                        </a>
+    
+    
+    
+                        </p>
+                        <br>
+                    </div>
+                </div>
+            </div>
+<!-- contact us end -->
+            
+<!-- contact us placement start -->
+            <div class="tab-pane fade" id="placements-tab" role="tabpanel">
+                <div class="container my-4">
+                    <div class="jumbotron py-3">
+                        <h5 class="text-lg-left mt-3 mb-0">CONTACT US | PLACEMENT | USICT</h5>
+                        <div class=" my-2 float-left" style="height: 5px; width: 7%; background-color:#FB8C00 "></div>
+                        <br><br>
+    
+    
+    
+                        <h6 class="card-title ml-5 "> <b>Dr. Navaid Zafar Rizvi | Placement Coordinator</b></h6>
+                        <p class="card-text ml-5">
+    
+                            <i class="fa fa-phone"></i>&nbsp;<a href="tel:01202346086"> 0120-234 6086 </a><br>
+                            <i class="fa fa-envelope"></i>&nbsp; <a href="mailto:navaid@gbu.ac.in"> navaid@gbu.ac.in</a>
+                        </p>
+    
+                        </a>
+    
+                        <h6 class="card-title ml-5 "> <b>Dr. Vimlesh Kumar | Placement Coordinator</b></h6>
+                        <p class="card-text ml-5">
+    
+                            <i class="fa fa-phone"></i>&nbsp;<a href="tel:01202346093"> 0120-234 6093 </a><br>
+                            <i class="fa fa-envelope"></i>&nbsp; <a href="mailto:vimlesh@gbu.ac.in"> vimlesh@gbu.ac.in</a>
+                        </p>
+    
+                        </a>
+    
+                        <hr>
+                        <h6 class="card-title ml-5 "> <b>Dr. Vinay Kumar Litoria | Manager, Corporate Relations | GBU</b></h6>
+                        <p class="card-text ml-5">
+    
+                            Gautam Buddha University, Greater Noida, 201312,<br>
+                            Distt. Gautam Budh Nagar, Uttar Pradesh, INDIA <br>
+                            <i class="fa fa-phone"></i>&nbsp;<a href="tel:01202344209"> 0120-234 4209 </a><br>
+                            <i class="fa fa-envelope"></i>&nbsp; <a href="mailto:crc@gbu.ac.in"> crc@gbu.ac.in</a>
+                        </p>
+    
+                        </a>
+    
+    
+    
+                        </p>
+                        <br>
+                    </div>
+                </div>
+            </div>
+<!-- contact us placement end -->
+            
+<!-- contact us exam start -->
+            <div class="tab-pane fade" id="exam-tab" role="tabpanel">
+                <div class="container my-4">
+                    <div class="jumbotron py-3">
+                        <h5 class="text-lg-left mt-3 mb-0">CONTACT US | EXAMINATION | USICT</h5>
+                        <div class=" my-2 float-left" style="height: 5px; width: 7%; background-color:#FB8C00 "></div>
+                        <br><br>
+    
+    
+    
+                        <h6 class="card-title ml-5 "> <b>Dr. Rajesh Mishra | Exam Coordinator </b></h6>
+                        <p class="card-text ml-5">
+    
+    
+                            <i class="fa fa-phone"></i>&nbsp;<a href="tel:01202346076"> 0120-234 6076 </a><br>
+                            <i class="fa fa-envelope"></i>&nbsp; <a href="mailto:rmishra@gbu.ac.in"> rmishra@gbu.ac.in</a>
+                        </p>
+    
+                        </a>
+    
+                        <h6 class="card-title ml-5 "> <b>Dr. Vidushi Sharma | Exam Coordinator </b></h6>
+                        <p class="card-text ml-5">
+    
+                            <i class="fa fa-phone"></i>&nbsp;<a href="tel:01202346077"> 0120-234 6077 </a><br>
+                            <i class="fa fa-envelope"></i>&nbsp; <a href="mailto:vidushi@gbu.ac.in"> vidushi@gbu.ac.in</a>
+                        </p>
+    
+                        </a>
+    
+                        <h6 class="card-title ml-5 "> <b>Dr. Aarti Gautam Dinker | Exam Coordinator </b></h6>
+                        <p class="card-text ml-5">
+    
+                            <i class="fa fa-phone"></i>&nbsp;<a href="tel:01202346096"> 0120-234 6096 </a><br>
+                            <i class="fa fa-envelope"></i>&nbsp; <a href="mailto:aarti@gbu.ac.in"> aarti@gbu.ac.in</a>
+                        </p>
+    
+                        </a>
+    
+    
+    
+    
+                        </p>
+                        <br>
+                    </div>
+                </div>
+            </div>
+<!-- contact us Exam end -->
+            
+<!-- contact us admission start -->
+            <div class="tab-pane fade" id="admission-tab" role="tabpanel">
+                <div class="container my-4">
+                    <div class="jumbotron py-3">
+                        <h5 class="text-lg-left mt-3 mb-0">CONTACT US | ADMISSIONS | USICT</h5>
+                        <div class=" my-2 float-left" style="height: 5px; width: 7%; background-color:#FB8C00 "></div>
+                        <br><br>
+    
+    
+    
+                        <h6 class="card-title ml-5 "> <b>Dr. Pradeep Tomar | Admissions Coordinator</b></h6>
+                        <p class="card-text ml-5">
+    
+    
+                            <i class="fa fa-phone"></i>&nbsp;<a href="tel:01202346085"> 0120-234 6085 </a><br>
+                            <i class="fa fa-envelope"></i>&nbsp; <a href="mailto:pradeep.tomar@gbu.ac.in"> pradeep.tomar@gbu.ac.in</a>
+                        </p>
+    
+                        </a>
+    
+                        <h6 class="card-title ml-5 "> <b>Dr. Arun Solanki | Admissions Coordinator</b></h6>
+                        <p class="card-text ml-5">
+    
+                            <i class="fa fa-phone"></i>&nbsp;<a href="tel:01202346083"> 0120-234 6083 </a><br>
+                            <i class="fa fa-envelope"></i>&nbsp; <a href="mailto:asolanki@gbu.ac.in"> asolanki@gbu.ac.in</a>
+                        </p>
+    
+                        </a>
+    
+   
+                        </p>
+                        <br>
+                    </div>
+                </div>
+            </div>
+<!-- contact us admission end -->
+            
+<!-- contact us admission start -->
+            <div class="tab-pane fade" id="research-tab" role="tabpanel">
+                <div class="container my-4">
+                    <div class="jumbotron py-3">
+                        <h5 class="text-lg-left mt-3 mb-0">CONTACT US | RESEARCH | USICT</h5>
+                        <div class=" my-2 float-left" style="height: 5px; width: 7%; background-color:#FB8C00 "></div>
+                        <br><br>
+    
+    
+                        <h6 class="card-title ml-5 "> <b>Dr. Neeta Singh | Research Coordinator</b></h6>
+    
+                        <p class="card-text ml-5">
+    
+    
+                            <i class="fa fa-phone"></i>&nbsp;<a href="tel:01202346080"> 0120-234 6080 </a><br>
+                            <i class="fa fa-envelope"></i>&nbsp; <a href="mailto:neeta@gbu.ac.in"> neeta@gbu.ac.in</a>
+                        </p>
+    
+                        </a>
+    
+    
+    
+    
+    
+                        </p>
+                        <br>
+                    </div>
+                </div>
+            </div>
+ <!-- contact us admission end -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        </div>
+        <div class="gcse-searchresults-only"></div>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    
+    
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+    

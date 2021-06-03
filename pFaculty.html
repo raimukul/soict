@@ -1,0 +1,36 @@
+<!-- permanent facutly ICT start -->
+<div class="tab-pane fade" id="faculty-tab" role="tabpanel">
+    <div class="">
+        <div class="container my-4">
+
+            <h5 class="text-lg-left mt-1 mb-0">FACULTY MEMBERS | USICT</h5>
+            <div class=" my-2 float-left" style="height: 5px; width: 7%; background-color:#FB8C00 "></div>
+            <br>
+
+            <p class="text-justify">
+                One of the biggest strengths of the Univerity School of Information and Communication Technology is its dedicated, competent and accomplished faculty. The faculty members have distinguished academic achievements in their respective areas and the related basic disciplines and are actively involved in teaching, training, and research. They conduct consultancy assignments to keep in touch with the real-life corporate challenges in public and Private Companies, financial institutions, government agencies and international agencies etc. Dedicated academicians and eminent researchers are also committed to bringing out the latent potential in every student. The faculty members of the university are prepared to take an extra step that separates excellence from merely adequate. As this is a residential campus, the faculty members are available for consultations and guidance outside the classroom as well in an informal and customized level.
+            </p>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <div id="cards-container">
+
+            @foreach (var item in Model)
+            {
+                if (item.school.ToLower() == "university school of information and communication technology")
+                {
+                    <div class="card rteleft facultycard" style="width:350px" dept="7" type="regular">
+                        <strong><img alt="" src="~/Content/gbudata/Employee/img/@Html.DisplayFor(modelItem => item.image)" style="float:left;height:150px;"><a href="http://faculty.gbu.ac.in/main.php?view=home&id=@Html.DisplayFor(modelItem => item.id)">@Html.DisplayFor(modelItem => item.name)</a></strong>
+                        <p>
+                            <strong>
+                                @Html.DisplayFor(modelItem => item.position)
+                            </strong>
+                        </p>
+                        <p>@Html.DisplayFor(modelItem => item.qualification)</p>
+                        <p>@Html.DisplayFor(modelItem => item.field_of_teaching)</p>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+<!-- permanent faculty ICT end -->
